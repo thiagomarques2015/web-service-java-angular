@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Web Service Example</title>
+
+  <!-- CSS  -->
+  <!-- http://materializecss.com/ Materilize -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- JS -->
+  <script src="js/angular.min.js"></script> <!-- https://docs.angularjs.org/api -->
+</head>
+<body ng-app="App">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Web Service</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#cadastrar">Cadastrar</a></li>
+        <li><a href="#listar">Listar</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#cadastrar">Cadastrar</a></li>
+        <li><a href="#listar">Listar</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- https://docs.angularjs.org/api referencias para diretivas usadas -->
+  <div class="container" ng-controller="Item">
+    <div class="section" id="cadastrar">
+
+      <div class="row">
+        <div class="col s12">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Cadastrar</h4>
+           <div class="row">
+              <form class="col s12" ng-submit="adicionar(item)">
+                <div class="row">
+                  <div class="input-field col s8">
+                    <i class="material-icons prefix">label</i>
+                    <input id="icon_prefix" type="text" class="validate" ng-model="item">
+                    <label for="icon_prefix">Nome do item</label>
+                  </div>
+                  <div class="input-field col s4">
+                    <button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">done</i>Adicionar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section" id="listar" ng-init="listar()">
+
+      <div class="row">
+        <div class="col s12">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Listar</h4>
+          <div class="collection">
+            <a href="#!" class="collection-item" ng-repeat="item in itens">{{ item.name }}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
